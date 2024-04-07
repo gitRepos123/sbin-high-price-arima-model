@@ -16,8 +16,10 @@ def make_response(days):
   forecasts = model.forecast(steps = days)
   df = pd.DataFrame({ 'Days': days_array, 'Predictions': forecasts})
   st.table(df)
+  fig = plt.figure()
   plt.xlabel('Days')
   plt.ylabel('Price')
   plt.plot(days_array, forecasts)
-
+  st.pyplot(fig)
+  
 init_app()
