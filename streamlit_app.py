@@ -14,7 +14,7 @@ def make_response(days):
   days_array = list(range(1, days+1))
   model = jlb.load('sbin-high.pk1')
   forecasts = model.forecast(steps = days)
-  df = pd.DataFrame({ 'Days': days_array, 'Predictions': predictions})
+  df = pd.DataFrame({ 'Days': days_array, 'Predictions': forecasts})
   st.table(df)
   plt.xlabel('Days')
   plt.ylabel('Price')
