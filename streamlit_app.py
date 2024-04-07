@@ -21,7 +21,7 @@ def make_response(days):
   fig = plt.figure()
   plt.xlabel('Days')
   plt.ylabel('Price')
-  plt.plot(days_array, forecasts)
+  plt.scatter(days_array, forecasts)
   st.pyplot(fig)
   
 init_app()
